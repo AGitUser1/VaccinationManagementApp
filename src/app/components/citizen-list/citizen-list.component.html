@@ -1,0 +1,69 @@
+<div class="">
+
+        <!-- <p>citizen-list works!</p> -->
+        <app-header></app-header>
+        <div class="card shadow  container mt-4" *ngIf="isShow">
+                <!-- <H3>List Of Citizen</H3> -->
+                <div class="card-header ">
+
+                        <div class="row shadow p-3">
+                                <div class="col-1">ID</div>
+                                <div class="col-1"> NAME</div>
+                                <div class="col-1">EMAIL </div>
+                                <div class="col-2">PHONE </div>
+                                <!-- <div class="col-2"> ADDRESS</div> -->
+                                <div class="col-1"> FIRST DOSE</div>
+                                <div class="col-1">SECOND DOSE</div>
+                                <div class="col-1"> BOOSTER DOSE</div>
+                                <div class="col-2">VACCINATION STATUS </div>
+                                <div class="col-1 mx-5 " >MODIFY </div>
+                        </div>
+                </div>
+                <div class="card-body shadow" *ngFor="let tempCitizen of citizens; let i = index">
+
+                        <div class="row">
+                                <div class="col-1">
+                                        {{tempCitizen.id}}
+                                </div>
+                                <div class="col-1">
+                                        {{tempCitizen.name}}
+                                </div>
+                                <div class="col-1">
+                                        {{tempCitizen.email}}
+                                </div>
+                                <div class="col-2">
+                                        {{tempCitizen.phone}}
+                                </div>
+                                <!-- <div class="col-2">
+                                        {{tempCitizen.address}}
+                                </div> -->
+                                <div class="col-1">
+                                        {{tempCitizen.firstDose}}
+                                </div>
+                                <div class="col-1">
+                                        {{tempCitizen.secondDose}}
+                                </div>
+                                <div class="col-1">
+                                        {{tempCitizen.boosterDose}}
+                                </div>
+                                <div class="col-2">
+                                        {{tempCitizen.vaccinationStatus}}
+                                </div>
+                                <div class=" col-2 form-group text-end mt-2">
+                                        <a routerLink='/editCitizen/{{tempCitizen.id}}' class="btn text-light btn-primary mt-2"  >Edit</a>
+                                        <!-- <a routerLink='post/edit/{{post._id}}' class="btn btn-primary"  >Delete</a> -->
+                                        
+                                        
+                                        <button class="btn text-light mx-2 mt-2 btn-primary " (click)="test(i)"  >Delete</button>
+                                        <!-- [disabled]="regForm.form.invalid" -->
+                                    </div>
+
+                        </div>
+
+                </div>
+        </div>
+
+        
+
+        <app-footer></app-footer>
+</div>

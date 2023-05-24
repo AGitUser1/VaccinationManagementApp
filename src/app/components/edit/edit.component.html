@@ -1,0 +1,86 @@
+<!-- 1. form html ->2. Bind the form to model ->3.  validate the form -> 4. submit the for-->
+<!-- <p>register works!</p> -->
+<!-- <div class="container"> -->
+    <div class="card container ">
+
+        <div class="card-header shadow">
+            <h2>EDIT IT</h2>
+        </div>
+
+        <div class="card-body mt-2 ">
+
+            <form action="" #regForm="ngForm" (ngSubmit)="onSubmitForm()">
+                <!-- ngForm will be used to access all the form values , pipe is used to convert registration form value to json using regForm template-->
+                <!-- {{regForm.value |json }} <br> -->
+                <!-- {{c1 | json}} -->
+
+                <div class="form-group mt-2 ">
+                    <label for="Name" class="form-label">Name : </label>
+                    <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]=c1.name >
+                </div>
+                <div class="form-group mt-2 ">
+                    <label for="email" class="form-label">Email : </label>
+                    <input type="email" class="form-control" placeholder="Email" name="email"  [(ngModel)]=c1.email>
+                </div>
+                <div class="form-group mt-2 ">
+                    <label for="password" class="form-label">Password : </label>
+                    <input type="text" class="form-control" placeholder="Password" name="password" [(ngModel)]=c1.password>
+                </div>
+                <!-- <div class="form-group mt-2">
+                    <input type="text" class="form-control" placeholder="Confirm Password" name="confirmPassword" ngModel>
+                </div> -->
+                <!-- <div class="form-group mt-2">
+                    <input type="aadhar" class="form-control" placeholder="Aadhar No" name="aadharNo" ngModel>
+                </div> -->
+                <div class="form-group mt-2">
+                    <label for="phone" class="form-label">Phone : </label>
+                    <input type="text" class="form-control" placeholder="Phone" name="phone" [(ngModel)]=c1.phone>
+                </div>
+                <!-- <div class="form-group mt-2">
+
+                    <select name="" id="" class="form-select" name="city" ngModel>
+                        <option value="">Select Your City</option>
+                        <option *ngFor="let city of cities" value="{{city}}">{{city}}</option>
+                    </select>
+                </div> -->
+                <!-- <div class="form-group mt-2">
+                    <input type="radio" name="gender" value="Male" class="form-check-input" ngModel>Male
+                    <input type="radio" name="gender" value="Female" class="form-check-input" ngModel>Female
+                    <input type="radio" name="gender" value="Others" class="form-check-input" ngModel>Others
+                </div> -->
+                
+                <div class="form-group mt-2">
+                    <label for="address" class="form-label">Address : </label>
+                    <input type="text" class="form-control" placeholder="Address" name="address" [(ngModel)]=c1.address>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="firstDose" class="form-label">First Dose : </label>
+                    <input type="text" class="form-control" placeholder="First Dose : yyyy-mm-dd"name="firstDose" [(ngModel)]=c1.firstDose>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="secondDose" class="form-label">Second Dose : </label>
+                    <input type="text" class="form-control" placeholder="Second Dose : yyyy-mm-dd" name="secondDose" [(ngModel)]=c1.secondDose>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="boosterDose" class="form-label">Booster Dose : </label>
+                    <input type="text" class="form-control" placeholder="Booster Dose : yyyy-mm-dd" name="boosterDose" [(ngModel)]=c1.boosterDose>
+                </div>
+                
+
+                <div class="form-group mt-2">
+                    <label for="vaccinationStatus" class="form-label"  >Status : </label>
+                    <select name="" id="" class="form-select" name="vaccinationStatus" [(ngModel)]=c1.vaccinationStatus>
+                        <option value="">Select Vaccination Status</option>
+                        <option *ngFor="let vacStatus of vaccinationStatus" value="{{vacStatus}}">{{vacStatus}}</option>
+                    </select>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-primary me-md-2 mt-2" >Edit</button>
+                  </div>
+                
+            </form>
+        </div>
+    </div>
+<!-- </div> -->

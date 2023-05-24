@@ -1,0 +1,57 @@
+<!-- 1. form html ->2. Bind the form to model ->3.  validate the form -> 4. submit the for-->
+<!-- <p>register works!</p> -->
+<app-header></app-header>
+<div class="">
+    <div class="card shadow mt-4 container">
+
+        <div class="card-header">
+            <h2>Registration form</h2>
+        </div>
+
+        <div class="card-body mt-2 ">
+
+            <form action="" #regForm="ngForm" (ngSubmit)="onSubmitForm()">
+                <!-- ngForm will be used to access all the form values , pipe is used to convert registration form value to json using regForm template--><!-- {{regForm.value |json }} <br> --><!-- {{c1 | json}} -->
+
+                <div class="form-group mt-2">
+                    <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]=c1.name >
+                </div>
+                <div class="form-group mt-2">
+                    <input type="email" class="form-control" placeholder="Email" name="email"  [(ngModel)]=c1.email>
+                </div>
+                <div class="form-group mt-2">
+                    <input type="text" class="form-control" placeholder="Password" name="password" [(ngModel)]=c1.password>
+                </div>
+                <div class="form-group mt-2">
+                    <input type="text" class="form-control" placeholder="Confirm Password" name="confirmPassword" ngModel>
+                </div>
+                <div class="form-group mt-2">
+                    <input type="aadhar" class="form-control" placeholder="Aadhar No" name="aadharNo" ngModel>
+                </div>
+                <div class="form-group mt-2">
+                    <input type="text" class="form-control" placeholder="Phone" name="phone" [(ngModel)]=c1.phone>
+                </div>
+                <div class="form-group mt-2">
+                    <input type="text" class="form-control" placeholder="Address"name="address" [(ngModel)]=c1.address>
+                </div>
+                <div class="form-group mt-2">
+
+                    <select name="" id="" class="form-select" name="city" ngModel>
+                        <option value="">Select Your City</option>
+                        <option *ngFor="let city of cities" value="{{city}}">{{city}}</option>
+                    </select>
+                </div>
+                <div class="form-group mt-2">
+                    <input type="radio" name="gender" value="Male" class="form-check-input" ngModel>Male
+                    <input type="radio" name="gender" value="Female" class="form-check-input" ngModel>Female
+                    <input type="radio" name="gender" value="Others" class="form-check-input" ngModel>Others
+                </div>
+                <!-- <div class="form-group mt-2">
+                    <input type="checkbox" name="i-agree" id="" name="iAgree" ngModel>I agree to the terms and conditions.
+                </div> -->
+                
+                <button type="submit" class="btn btn-primary  mt-2" >Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
